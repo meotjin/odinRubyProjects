@@ -5,7 +5,8 @@ def caesar_cipher (string, key)
             #credit for the above isAlpha URL: shorturl.at/mvx79
             ascii = letter.ord
             max = ascii < 91 ? 91 : 123;
-            letter = ascii+key < max ? (ascii+key).chr : (65+((ascii+key)/max)).chr
+            min = ascii < 91 ? 64 : 96;
+            letter = ascii+key < max ? (ascii+key).chr : (min+((ascii+key)/max)).chr
         end
         letter
     end
